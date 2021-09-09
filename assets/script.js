@@ -35,3 +35,14 @@ function timeColor() {
         }
     }
     )}
+
+    // retreive any data in localstorage
+    $('#first .description').val(localStorage.getItem('first'));
+    $('#second .description').val(localStorage.getItem('second'));
+    $('#third .description').val(localStorage.getItem('third'));
+    $('#fourth .description').val(localStorage.getItem('fourth'));
+    $('#fifth .description').val(localStorage.getItem('fifth'));
+    $('#sixth .description').val(localStorage.getItem('sixth'));
+    $('#seventh .description').val(localStorage.getItem('seventh'));
+    $('#eigth .description').val(localStorage.getItem('eigth'));
+    $('#ninth .description').val(localStorage.getItem('ninth'));
