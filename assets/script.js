@@ -12,8 +12,26 @@ $(".saveBtn").on('click', function(){
     console.log(descriptionText)
     console.log(timePlace)    
 })
-
+timeColor();
+// function to color code the time
 function timeColor() {
     // get current hour
     var hourIs = moment().hour();
-}
+    console.log(hourIs);
+
+    // loop through each time block
+    $('.time-block').each(function () {
+        var blockTime = parseInt($(this).attr('id').split('hour')[1]);
+
+        // use provided css to apply the correct styles
+        if (blockTime < hourIs) {
+            $(this).addClass('past');
+        }
+        else if (blockTime === hourIs) {
+            $(this).addClass('present');
+        }
+        else {
+            $(this).addClass('future')
+        }
+    }
+    )}
