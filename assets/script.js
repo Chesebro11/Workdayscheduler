@@ -2,7 +2,7 @@
 var localDate = moment().format('dddd, MMM Do YYYY');
 $('#currentDay').html(localDate);
 
-
+$(document).ready(function (){
 // Event Listener to save
 $(".saveBtn").on('click', function(){
     //Grabs text from textarea and the ID with its time slot
@@ -37,31 +37,17 @@ function timeColor() {
     }
     )}
 
-    timeColor();
-    // retreive any data in localstorage
-    $("#first .description").localStorage.getItem('first');
-    $('#second .description').localStorage.getItem('second');
-    $('#third .description').localStorage.getItem('third');
-    $('#fourth .description').localStorage.getItem('fourth');
-    $('#fifth .description').localStorage.getItem('fifth');
-    $('#sixth .description').localStorage.getItem('sixth');
-    $('#seventh .description').localStorage.getItem('seventh');
-    $('#eigth .description').localStorage.getItem('eigth');
-    $('#ninth .description').localStorage.getItem('ninth');
-
-
-
-//WHEN I open the planner
-//THEN the current day is displayed at the top of the calendar
-//WHEN I scroll down
-//THEN I am presented with time blocks for standard business hours
-//WHEN I view the time blocks for that day
-//THEN each time block is color-coded to indicate whether it is in the past, present, or future
-//WHEN I click into a time block
-//THEN I can enter an event
-//WHEN I click the save button for that time block
-//THEN the text for that event is saved in local storage
-//WHEN I refresh the page
-//THEN the saved events persist
-
     
+    // retreive any data in localstorage
+    $("first .description").val(localStorage.getItem('first'));
+    $('second .description').val(localStorage.getItem('second'));
+    $('third .description').val(localStorage.getItem('third'));
+    $('fourth .description').val(localStorage.getItem('fourth'));
+    $('#fifth .description').val(localStorage.getItem('fifth'));
+    $('sixth .description').val(localStorage.getItem('sixth'));
+    $('seventh .description').val(localStorage.getItem('seventh'));
+    $('eigth .description').val(localStorage.getItem('eigth'));
+    $('ninth .description').val(localStorage.getItem('ninth'));
+
+    timeColor();
+})
