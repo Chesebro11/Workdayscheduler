@@ -22,17 +22,24 @@ function timeColor() {
 
     // loop through each time block
     $('.time-block').each(function () {
-        var blockTime = parseInt($(this).attr('id').split('hour')[1]);
+        var blockTime = (parseInt($('.hour').text()));
+        console.log(blockTime)
 
         // use provided css to apply the correct styles
         if (blockTime < hourIs) {
             $(this).addClass('past');
+            $(this).removeClass('present');
+            $(this).removeClass('future');
         }
         else if (blockTime === hourIs) {
             $(this).addClass('present');
+            $(this).removeClass('future');
+            $(this).removeClass('past');
         }
         else {
             $(this).addClass('future')
+            $(this).removeClass('past');
+            $(this).removeClass('present');
         }
     }
     )}
